@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Westlake 2025 Talk</title>
+    
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css">
+    
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Talk Title</h1>
+                <h3>Westlake 2025</h3>
+                <p>
+                    <small>Your Name</small>
+                </p>
+            </section>
+            
+            <section>
+                <h2>Slide 2</h2>
+                <p>Your content here</p>
+            </section>
+        </div>
+    </div>
+
+    <script type="module">
+        import Reveal from './node_modules/reveal.js/dist/reveal.esm.js';
+        import Markdown from './node_modules/reveal.js/plugin/markdown/markdown.esm.js';
+        import Highlight from './node_modules/reveal.js/plugin/highlight/highlight.esm.js';
+        import Notes from './node_modules/reveal.js/plugin/notes/notes.esm.js';
+
+        let deck = new Reveal({
+            hash: true,
+            plugins: [ Markdown, Highlight, Notes ]
+        });
+        deck.initialize();
+    </script>
+</body>
+</html>
