@@ -1,0 +1,13 @@
+{
+  "name": "talks",
+  "version": "1.0.0",
+  "description": "Public talks using reveal.js",
+  "private": true,
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "dependencies": {
+    "reveal.js": "^5.2.1"
+  }
+}
