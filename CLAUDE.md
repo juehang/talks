@@ -4,47 +4,49 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Structure
 
-This is a monorepo for reveal.js presentations where each talk folder is an independent package:
+This is a repository for Slidev presentations managed from the root:
 
 ```
 talks/
-├── 2024 Westlake/          # Individual talk package
-│   ├── package.json        # Talk-specific dependencies
-│   ├── index.html          # Main presentation file
-│   └── node_modules/       # reveal.js and dependencies
-├── 2025 Conference/        # Another talk package
-└── assets/                 # Shared assets (images, etc.)
+├── 2025 Westlake/          # Individual talk folder
+│   ├── slides.md           # Main presentation file
+│   └── public/             # Talk-specific assets
+├── 2025 Conference/        # Another talk folder
+├── assets/                 # Shared assets (images, etc.)
+├── package.json            # Root dependencies (Slidev)
+└── node_modules/           # Shared Slidev installation
 ```
 
-## Working with Individual Talks
+## Working with Talks
 
-Each talk folder is a standalone package with its own:
-- `package.json` with reveal.js dependencies
-- `index.html` as the main presentation file
-- Independent dependency versions (different talks may use different reveal.js versions)
+All talks are managed from the root directory using a shared Slidev installation:
+
+- Each talk has a `slides.md` file as the main presentation
+- Talk-specific assets go in their `public/` folder
+- All talks share the same Slidev version from root dependencies
 
 ## Common Commands
 
-For any talk, navigate to the talk directory first:
+From the root directory:
 
 ```bash
-cd "2024 Westlake"  # or any talk folder
-npm install         # Install reveal.js dependencies
-npm run dev         # Start development server
-npm run build       # Build for production
-npm run pdf         # Generate PDF (if configured)
+npm run slidev --talk="2025 Westlake"  # Start specific talk in dev mode
+slidev "2025 Westlake/slides.md"       # Alternative syntax
+slidev export "2025 Westlake/slides.md" # Export to PDF
+slidev build "2025 Westlake/slides.md"  # Build for production
 ```
 
 ## Creating New Talks
 
 1. Create a new folder with the talk name (e.g., "2025 Conference")
-2. Add `package.json` with reveal.js dependency
-3. Create `index.html` with reveal.js structure
-4. Run `npm install` to set up dependencies
+2. Create `slides.md` with Slidev frontmatter and content
+3. Optionally create `public/` folder for talk-specific assets
+4. Run from root: `npm run slidev --talk="2025 Conference"`
 
 ## Architecture Notes
 
-- No root package.json - each talk manages its own dependencies
-- Talks are isolated and can use different reveal.js versions
+- Single root package.json with shared Slidev dependencies
+- All talks use the same Slidev version for consistency
 - Shared assets go in the `assets/` folder
+- Talk-specific assets go in each talk's `public/` folder
 - All content is licensed under CC-BY-4.0
