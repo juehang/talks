@@ -1,0 +1,16 @@
+{
+  "name": "westlake-2025-slidev",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Westlake 2025 talk using Slidev",
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.48.0",
+    "@slidev/theme-default": "latest"
+  },
+  "private": true
+}

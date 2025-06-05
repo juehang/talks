@@ -1,13 +1,13 @@
 {
   "name": "talks",
   "version": "1.0.0",
-  "description": "Public talks using reveal.js",
+  "description": "Public talks using Slidev",
   "private": true,
   "scripts": {
-    "start": "npx serve .",
-    "dev": "npx serve ."
+    "slidev": "slidev \"$npm_config_talk/slides.md\" --open"
   },
   "dependencies": {
-    "reveal.js": "^5.2.1"
+    "@slidev/cli": "^0.48.0",
+    "@slidev/theme-seriph": "^0.25.0"
   }
 }
